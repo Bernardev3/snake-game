@@ -133,7 +133,7 @@ let score = 0;
 
 function gameOver() {
 	alert("GAME OVER!");
-	window.location.href = window.location.href;
+	location.reload();
 }
 
 function keyPressed(event) {
