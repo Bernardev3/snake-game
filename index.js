@@ -131,11 +131,6 @@ let apple = new Apple(150, 140);
 let snake = new Snake(50, 140, 38, 37, 40, 39);
 let score = 0;
 
-function gameOver() {
-	alert("GAME OVER!");
-	location.reload();
-}
-
 function keyPressed(event) {
 	snake.keyDown(event);
 }
@@ -157,4 +152,10 @@ document.getElementById("pauseButton").onclick = function() {
 	alert("Game paused, press OK to continue.");
 }
 
-setInterval(update, 1000/10);
+let gameLoop = setInterval(update, 1000/10);
+
+function gameOver() {
+	alert("GAME OVER!");
+	clearInterval(gameLoop);
+	location.reload();
+}
